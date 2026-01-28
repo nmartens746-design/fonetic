@@ -4,39 +4,46 @@
 <meta charset="UTF-8">
 <title>Full Pinyin Chart</title>
 <style>
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #F8EACD;
-  padding: 20px;
-color: #291203;
-}
-body {
-  margin: 0;
-  overflow: auto; /* скролл только у браузера */
+  color: #A15522;
+  overflow-x: auto;
 }
 
+/* контейнер БЕЗ внутренних отступов */
 .table-wrap {
   width: 100%;
-  height: auto;        /* ← ОЧЕНЬ ВАЖНО */
-  overflow: visible;       /* ← оба ползунка */
+  overflow-x: auto;
   background: #F8EACD;
-  padding: 10px;
+  padding: 0;
   box-sizing: border-box;
 }
+
+/* таблица прижата влево */
 table {
   border-collapse: collapse;
   min-width: 1400px;
-  margin: auto;
+  margin: 0;
 }
+
 th, td {
   border: 1px solid #A15522;
   padding: 6px;
   text-align: center;
   font-size: 15px;
 }
+
 th {
   background: #F8EACD;
 }
+
 .cell span {
   display: inline-block;
   padding: 2px 4px;
@@ -44,10 +51,12 @@ th {
   cursor: pointer;
   border-radius: 3px;
 }
+
 .cell span:hover {
   background: #A15522;
   color: #F8EACD;
 }
+
 td.empty {
   background: #F8EACD;
 }
@@ -963,4 +972,5 @@ document.querySelectorAll('.cell span').forEach(el => {
 </body>
 
 </html>
+
 
