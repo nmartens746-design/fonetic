@@ -3,41 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <title>Full Pinyin Chart</title>
+
 <style>
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-}
-html, body {
-  width: 100%;
   height: 100%;
+  background: #F8EACD;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #A15522;
 }
 
-body {
+/* ===== ГЛАВНЫЙ СКРОЛЛ-КОНТЕЙНЕР ===== */
+.iframe-scroll {
+  width: 100vw;
+  height: 100vh;
   overflow-x: scroll;
   overflow-y: scroll;
-}
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #F8EACD;
-  color: #A15522;
-  overflow-x: auto;
+  box-sizing: border-box;
 }
 
-/* контейнер БЕЗ внутренних отступов */
-.table-wrap {
-  width: 100%;
-  overflow-x: auto;
+/* ===== кастомные скроллы (как flatly.pro) ===== */
+.iframe-scroll::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.iframe-scroll::-webkit-scrollbar-track {
   background: #F8EACD;
+}
+
+.iframe-scroll::-webkit-scrollbar-thumb {
+  background: #A15522;
+  border-radius: 6px;
+}
+
+/* ===== контейнер таблицы ===== */
+.table-wrap {
+  width: max-content;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* таблица прижата влево */
+/* ===== таблица ===== */
 table {
   border-collapse: collapse;
-  min-width: 1400px;
+  min-width: 1600px; /* ОБЯЗАТЕЛЬНО для горизонтального скролла */
   margin: 0;
 }
 
@@ -46,10 +58,14 @@ th, td {
   padding: 6px;
   text-align: center;
   font-size: 15px;
+  white-space: nowrap;
 }
 
 th {
   background: #F8EACD;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .cell span {
@@ -980,6 +996,7 @@ document.querySelectorAll('.cell span').forEach(el => {
 </body>
 
 </html>
+
 
 
 
